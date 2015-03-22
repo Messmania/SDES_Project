@@ -18,6 +18,11 @@ my_json = json.loads(foo)
 check test_json.py
 
 
+Problems:
+How to read multiple json objects in a file??--DONE convert it to a list
+Either call processing method each time the tweet is obtained i.e in method STDOutListener, so that it is single json object. But this is not a good way.
+First we must dump the whole data in a file and then process it. So a code file Mining.py reads that file and processes it.
+
 
 Steps for ppt:
 Intro: Twitter ->extract data->mine it
@@ -25,15 +30,21 @@ About Twitter API,Extraction,Auth pkg,
 Mining: Analysing sentiments
 
 
+
+
 Mining ideas:
 >Sentiment analysis:
 state wise, and then displaying as pie chart and graphs
 happier during which month? time of the day? Employed or student
+
 >finding out who are the influential users who start a topic/trend? Also, one can see how long a trend has lived, making it interesting to note how popular some hashtag is/has been.
 
 >Something you can look into is using your collection of Twitter data (i.e. tweets) to try and determine relationships between the users.
  In other words, if you had 6 months worth of tweets from an active Twitter user, could you build out his social network and determine who his "close" friends are?
 This kind of research is pretty useful now a days in the area of social recommendations (think Twitter and Facebook).
 >Searching for links on a particular topic(research or any topics) which have lots of likes/votes, and then downloading those pages as pdfs with name saved as "Votes-count"
-Algo:
+
+
+Mining:
+each tweet is of type dict
 

@@ -20,14 +20,16 @@ class StdOutListener(StreamListener): #this means it is inheriting from class St
     def on_data(self, data):
         #print data
         #Added--Monika
-        json_object = json.loads(data)
+        #json_object = json.loads(data)
+        #for i in range(0,5):
         print data
         #print self.json_object
         #print type(json_object)
         #print json_object
         #print json_object.keys()
         #return True #returning true means keep the connection alive and keep reading tweets, it prints tweets one by one
-        return False
+        return True
+        #return False
 
     def on_error(self, status):
         print "This is error:",status
@@ -48,5 +50,6 @@ if __name__ == '__main__':
    
     #stream.filter(track=['python', 'javascript', 'ruby'])
     #stream.filter(track=['yay', 'happy', 'glad','omg','Oh my god'])
+    stream.filter(track=['yay', 'happy', 'glad','omg','Oh my god'],languages=['en'])
     #stream.filter() #doesn't work
-    stream.filter(follow=['60860629'],track=['#UFGrad','Ravi'],languages=['English'])
+    #stream.filter(follow=['60860629'],track=['#UFGrad','Ravi'],languages=['en'])
