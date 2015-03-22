@@ -1,0 +1,39 @@
+urllib.urlopen reads the website and returns a json object.
+json.load converts it into a python object (one of the python types)
+
+Installed tweepy library of python by first installin python-pip and then using pip to install tweepy
+sudo pip install tweepy
+
+OAuth in tweepy pkg is used to create authorization details.
+and set_acces_token is used to set access token? (not very clear)
+
+StreamListener is a class which has skeleton of methods in it. So we define a new class StdoutListener which
+ineherits from this and overrides those methods.
+See streaming.py for more info //this is a python library code, copied here for ease of use. it is located in /usr/lib/python2.7/tweepy/
+
+Json.load and json.loads:
+The functions with an s take string parameters. The others take file streams. 
+foo = '{"age": 38}' 
+my_json = json.loads(foo)
+check test_json.py
+
+
+
+Steps for ppt:
+Intro: Twitter ->extract data->mine it
+About Twitter API,Extraction,Auth pkg,
+Mining: Analysing sentiments
+
+
+Mining ideas:
+>Sentiment analysis:
+state wise, and then displaying as pie chart and graphs
+happier during which month? time of the day? Employed or student
+>finding out who are the influential users who start a topic/trend? Also, one can see how long a trend has lived, making it interesting to note how popular some hashtag is/has been.
+
+>Something you can look into is using your collection of Twitter data (i.e. tweets) to try and determine relationships between the users.
+ In other words, if you had 6 months worth of tweets from an active Twitter user, could you build out his social network and determine who his "close" friends are?
+This kind of research is pretty useful now a days in the area of social recommendations (think Twitter and Facebook).
+>Searching for links on a particular topic(research or any topics) which have lots of likes/votes, and then downloading those pages as pdfs with name saved as "Votes-count"
+Algo:
+
