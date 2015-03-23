@@ -17,20 +17,34 @@ class StdOutListener(StreamListener): #this means it is inheriting from class St
     #Added--Monika
     #~ def on_connect(self):
         #~ print "Connection successfully established"
-    def on_data(self, data):
-        #print data
-        #Added--Monika
-        #json_object = json.loads(data)
-        #for i in range(0,5):
-        print data
-        #print self.json_object
-        #print type(json_object)
-        #print json_object
-        #print json_object.keys()
-        #return True #returning true means keep the connection alive and keep reading tweets, it prints tweets one by one
-        return True
+    #~ def on_data(self, data):
+        #~ #print data
+        #~ #Added--Monika
+        #~ #json_object = json.loads(data)
+        #~ #for i in range(0,5):
+        #~ if 'delete' not in data: # do not dump deleted tweets in the file
+            #~ print data
+        #~ #print self.json_object
+        #~ #print type(json_object)
+        #~ #print json_object
+        #~ #print json_object.keys()
+        #~ #return True #returning true means keep the connection alive and keep reading tweets, it prints tweets one by one
+        #~ return True
+        
         #return False
-
+    
+    def __init__(self):
+        """for setting the count variable for the no. of tweets we want"""
+        self.count = 0
+        
+    def on_data(self,data):
+        """for dumping only first 10 tweets which are not the deleted ones"""
+        if 'delete' not in data:
+            self.count = self.count + 1
+            print data
+        if self.count==10:            
+            return False
+        return True
     def on_error(self, status):
         print "This is error:",status
 
@@ -48,8 +62,10 @@ if __name__ == '__main__':
 
     #This line filter Twitter Streams to capture data by the keywords: 'python', 'javascript', 'ruby'
    
+    stream.sample() #works
+    #stream.userstream() #doesn't work, thorough testing not done
     #stream.filter(track=['python', 'javascript', 'ruby'])
     #stream.filter(track=['yay', 'happy', 'glad','omg','Oh my god'])
-    stream.filter(track=['yay', 'happy', 'glad','omg','Oh my god'],languages=['en'])
+    #stream.filter(track=['http'])
     #stream.filter() #doesn't work
-    #stream.filter(follow=['60860629'],track=['#UFGrad','Ravi'],languages=['en'])
+    #stream.filter(follow=['60860629'],track=['#UFGrad','Ravi'],languages=['en']) #doesn't work
