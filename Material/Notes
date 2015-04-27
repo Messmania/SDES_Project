@@ -1,7 +1,7 @@
 urllib.urlopen reads the website and returns a json object.
 json.load converts it into a python object (one of the python types)
 
-Installed tweepy library of python by first installin python-pip and then using pip to install tweepy
+Installed tweepy library of python by first installing python-pip and then using pip to install tweepy
 sudo pip install tweepy
 
 OAuth in tweepy pkg is used to create authorization details.

@@ -55,9 +55,41 @@ def checkPolygon():
     p.set_array(np.array(colors))
     ax.add_collection(p)
     plt.colorbar(p)
-
     plt.show()
 
 #checkPolygon()
+
+def checkPolyFillStates():
+    ax = plt.gca()
+
+    N = 3
+    patches = []
+    #x=[[1,1.5] [2,2.5] [3,3.5]]
+    dim1 = np.random.rand(N,2)
+    dim2 = np.random.rand(N,2)
+    dim3 = np.random.rand(N,2)
+    arrayCoordinates=[dim1,dim2,dim3]
+    #dim = np.array([[1,2],[2,3],[3,4],[5,2]])
+    print "Type:",type(dim1)
+    #~ dim=np.array([[ 1 0.5 ]
+        #~ [ 2 2.5 ]
+        #~ [ 3 3.5 ]])
+    print "Dim:",dim1
+    textArr=["Poly1","Poly2","Poly3"]
+    for i in range(N):
+        poly = Polygon(arrayCoordinates[i], True)
+        ax.add_patch(poly)
+        centroid=findMidPoint(arrayCoordinates[i])
+        ax.text(centroid[0],centroid[1],textArr[i],fontsize=12)
+    plt.show()
+    
+
+def findMidPoint(dim):    
+    print dim    
+    x = [p[0] for p in dim]
+    y = [p[1] for p in dim]
+    centroid = (sum(x) / len(dim), sum(y) / len(dim))
+    print centroid
+    return centroid
 
     
