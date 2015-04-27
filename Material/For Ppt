@@ -1,5 +1,5 @@
 Objective:
-To perform sentiment analysis on data received from twitter streams
+To perform sentiment analysis on data received from live twitter stream
 Algo: stream the data received from any of the twitter streams, json object is received
 Prepare a dictionary of words giving a sentiment score to each word, positive score to a positive word, negative to a negative word, 0 otherwise
 each tweet will be scanned for those words and score is calculated for it.
@@ -7,14 +7,25 @@ each tweet's location,time and preferably user's current employment status can b
 graph will be shown depicting the happiest state,time and worker-> location wise,time wise and empl status wise resp.
 
 Library and techniques used
-Json-used for processing each tweet
+Json-used for receiving each tweet
+    -Since the tweets are returned for twitter API in a json object
 tweepy-twitter library with python wrapper
-urllib- in case tweepy wont be used (for changing url), then this will be used.
+    -Provides functions to stream data from twitter using API
+        -OAuthHandler: for authentication purposes
+        -StreamListner: for listening
+pandas-used for data mining
+    -Dataframe are constructed for easy processing (Read about it)
 
 Have done:
-Dictionary is being prepared.
-Streaming is being done using one fixed method using tweepy library from stream.twitter.com
+    -Authentication and streaming code is done
+    -Able to stream live tweets unfiltered or filtered based on certain keywords 
+    -Streaming is being done using one fixed method using tweepy library from stream.twitter.com
+    -Mining has been started
 
 To do:
 Changing the streaming url(so as to get user's info) in tweepy or without it.
 Actual data mining.
+========UPDATE==========
+-Filtering data based on country
+-calculating the score
+-preparing graphical view or map based view

@@ -1,0 +1,2 @@
+Notes:
+Shape file has repeated data for same state, with different (some field) which is needed, for some kind of geometry info

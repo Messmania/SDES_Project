@@ -17,6 +17,17 @@ foo = '{"age": 38}'
 my_json = json.loads(foo)
 check test_json.py
 
+Steps:
+1. Streaming --DONE
+    -Deleted tweets to be considered or not? Should be.
+2. Preparing a dict with scores
+3. Calculate score of every tweet
+    -Check each word of the tweet's text in the dict and add the score.
+4. Make a new list which has dict members, which maps each tweet(from tweet_list) to its score
+    -newList=[{tweet_list[0]:score},{tweet_list[1]:score}..so on]
+5. Get the total score when tweets are clubbed country wise, state wise etc
+6. Make a graph with Total score->country, positive-Happy, 0-neutral, negative-Sad or angry
+7. Get a GLOBAL map with color codes for display--CHALLENGE
 
 Problems:
 How to read multiple json objects in a file??--DONE convert it to a list
@@ -37,6 +48,7 @@ Steps for ppt:
 Intro: Twitter ->extract data->mine it
 About Twitter API,Extraction,Auth pkg,
 Mining: Analysing sentiments
+    
 
 
 

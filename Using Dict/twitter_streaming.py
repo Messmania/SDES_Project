@@ -40,10 +40,10 @@ class StdOutListener(StreamListener): #this means it is inheriting from class St
     def on_data(self,data):
         """for dumping only first 10 tweets which are not the deleted ones"""
         if 'delete' not in data:
-            self.count = self.count + 1
+            #self.count = self.count + 1
             print data
-        if self.count==10:            
-            return False
+        #~ if self.count==10:            
+            #~ return False
         return True
     def on_error(self, status):
         print "This is error:",status
@@ -62,7 +62,10 @@ if __name__ == '__main__':
 
     #This line filter Twitter Streams to capture data by the keywords: 'python', 'javascript', 'ruby'
    
-    stream.sample() #works
+    #stream.sample() #works
+    stream.filter(track=['US','United States'])
+    
+    #===================================
     #stream.userstream() #doesn't work, thorough testing not done
     #stream.filter(track=['python', 'javascript', 'ruby'])
     #stream.filter(track=['yay', 'happy', 'glad','omg','Oh my god'])
