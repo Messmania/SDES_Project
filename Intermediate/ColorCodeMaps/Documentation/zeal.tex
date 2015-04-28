@@ -1,0 +1,54 @@
+\documentclass{beamer}
+
+\begin{document}
+\frame{\frametitle{Project Objective\\Text mining using live Twitter streaming API and Python}
+    \begin{itemize}
+        \item To peform sentiment analysis on the twitter database and display them specific to a country
+        \item Sentiment analysis        
+        \begin{itemize}
+        	\item To display the happiest state in USA
+        \end{itemize}
+        \item Data mining
+        \begin{itemize}
+			\item Calculate the happiness score based on the keywords in dictionary
+        \end{itemize}
+    \end{itemize}
+}
+
+\frame{\frametitle{Project Outline - Tools/Packages and Technology Stack Used}
+    \begin{itemize}
+        \item Packages used are as follows
+        \begin{itemize}
+            \item Json: For dumping live stream into a file
+            \item Tweepy: Library for twitter API with python wrapper
+            \item Pandas: for ease of data mining
+            \item re: for regular expression
+            \item matplotlib: for plotting the data
+        \end{itemize}
+    \end{itemize}
+}  
+
+\frame{\frametitle{Outline of work completed}
+    \begin{itemize}
+        \item Authentication 
+         \begin{itemize}
+            \item Successfully able to access twitter API
+         \end{itemize}
+        \item Streaming 
+         \begin{itemize}
+            \item Able to obtain live stream of unfiltered as well as filtered tweets based on keywords
+         \end{itemize}
+        \item Streaming is being done using one fixed method using tweepy library from stream.twitter.com
+        \item Mining has been started
+    \end{itemize}
+}
+
+\frame{\frametitle{Outline of work to be done}
+    \begin{itemize}
+        \item Mining
+        \item Organizing the mined data in a graphical view
+        \item Displaying on a country map with state-wise color coding
+    \end{itemize}
+}
+
+\end{document}
