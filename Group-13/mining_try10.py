@@ -17,12 +17,6 @@ import matplotlib.patches as patches
 from pylab import *
 
 #global variables to plot graph
-#~ aLow=416                #Happiest
-#~ bHigh,bLow=415,411      #Happier
-#~ cHigh,cLow=410,401      #Happy
-#~ dHigh,dLow=400,391      #OK
-#~ eHigh,eLow=390,385      #Not sad
-
 aLow=381                #Happiest
 bHigh,bLow=380,366      #Happier
 cHigh,cLow=365,351      #Happy
@@ -48,8 +42,7 @@ def findMidPoint(dim):
         return centroid
 
 
-def assignColors(myStates_info,popdensity):
-        print "Pop density in assignColors \n",popdensity    
+def assignColors(myStates_info,popdensity):  
         colors={}
         statenames=[]
         state_list=[]
@@ -75,8 +68,6 @@ def assignColors(myStates_info,popdensity):
                         else:
                                 colors[statename]=red #red           
                 statenames.append(statename)
-        print "Sorted",sorted(pop_list),state_list
-        print "Min,max:",minPop,maxPop
         return statenames,colors
 
 def createPolygons(myStates,statenames,colors):
